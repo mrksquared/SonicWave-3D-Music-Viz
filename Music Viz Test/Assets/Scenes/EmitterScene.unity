@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -978,7 +978,7 @@ MonoBehaviour:
   thresholdWindowSize: 64
   thresholdMultiplier: 11
   bpm: 95
-  spectrumGenerator: {fileID: 0}
+  spectrumGenerator: {fileID: 328807083}
 --- !u!82 &328807080
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1215,8 +1215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thresholdWindowSize: 64
-  thresholdMultiplier: 9
-  spectrumGenerator: {fileID: 0}
+  thresholdMultiplier: 1
+  spectrumGenerator: {fileID: 328807083}
 --- !u!114 &328807085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,8 +1230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thresholdWindowSize: 64
-  thresholdMultiplier: 12
-  spectrumGenerator: {fileID: 0}
+  thresholdMultiplier: 1
+  spectrumGenerator: {fileID: 328807083}
 --- !u!1 &350265022
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,11 +4127,11 @@ MonoBehaviour:
   meshOffset: {x: 0, y: 0, z: 0}
   x_meshResolution: 200
   y_meshResolution: 200
-  x_meshSpacing: 0.05
-  y_meshSpacing: 0.05
-  meshHeightScale: 1
-  perlinNoiseScale: 20
-  posRandomness: 0
+  x_meshSpacing: 0.08
+  y_meshSpacing: 0.08
+  meshHeightScale: 0.5
+  perlinNoiseScale: 7
+  posRandomness: 2
   perlinNoiseOffset: {x: 0.45, y: 0.435}
   colorsGradient:
     serializedVersion: 2
@@ -4166,8 +4166,8 @@ MonoBehaviour:
   defaultColor: {r: 0.7411765, g: 1, b: 1, a: 1}
   x_randomLimit: 10
   y_randomLimit: 10
-  xAnimSpeed: 0.05
-  yAnimSpeed: 0.03
+  xAnimSpeed: 0.2
+  yAnimSpeed: 0.15
 --- !u!198 &1349836622
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -8772,7 +8772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349836620}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 0.2, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

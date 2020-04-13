@@ -25,6 +25,12 @@ public class ParticleSea : MonoBehaviour {
 	public float x_randomLimit;
 	public float y_randomLimit;
 
+    float originalHeight;
+    float heightVelocity = 0f;
+
+    float originalNoise;
+    float noiseVeloicty = 0f;
+
 	private Vector3[] positions;
 	private bool colorsAssigned = false;
 	private ParticleSystem.Particle[] particlesArray;
@@ -41,7 +47,21 @@ public class ParticleSea : MonoBehaviour {
 		Random
 	}
 
-	public void PerlinNoiseScale(float noise) {
+    private void OnEnable()
+    {
+        analyzeBass.BassPeak += PulseHeight;
+        analyzeHighs.HighPeak += PulseNoise;
+        
+    }
+
+    private void OnDisable()
+    {
+        analyzeBass.BassPeak -= PulseHeight;
+        analyzeHighs.HighPeak -= PulseNoise;
+    }
+
+
+    public void PerlinNoiseScale(float noise) {
 		if(noise > 0f)
 			perlinNoiseScale = noise * 100;
 	}
@@ -111,6 +131,8 @@ public class ParticleSea : MonoBehaviour {
 		colorsAssigned = false;
 		hasAnythingChanged = true;
 		particlesText.text = "Particles count: 40000";
+        originalHeight = meshHeightScale;
+        originalNoise = perlinNoiseScale;
 	}
 
 	void Update () {
@@ -121,9 +143,14 @@ public class ParticleSea : MonoBehaviour {
 
 				for(int i = 0; i < x_meshResolution; i++) {
 					for(int j = 0; j < y_meshResolution; j++) {
-						xPos = (perlinNoiseOffset.x + i) / perlinNoiseScale;
+                    float xPos2 = (perlinNoiseOffset.x + i) / perlinNoiseScale * .5f;
+                    float yPos2 = (perlinNoiseOffset.y + j) / perlinNoiseScale * 1.2f;
+
+
+
+                    xPos = (perlinNoiseOffset.x + i) / perlinNoiseScale;
 						yPos = (perlinNoiseOffset.y + j) / perlinNoiseScale;
-						zPos = Mathf.PerlinNoise(xPos, yPos);
+						zPos = Mathf.PerlinNoise(xPos, yPos) + Mathf.PerlinNoise(xPos2, yPos2) - .5f;
 
 						//Set position based on these three
 						particlesArray[i * x_meshResolution + j].position = new Vector3(i * x_meshSpacing + meshOffset.x, j * y_meshSpacing + meshOffset.y, zPos * meshHeightScale);
@@ -135,13 +162,36 @@ public class ParticleSea : MonoBehaviour {
 			}
 			particleSystem.SetParticles(particlesArray, particlesArray.Length);
 		}
+
+        
+
 		frameCount++;
 		colorsAssigned = true;
+
+
 	}
 
-	private void RegenerateRandomPositionsArray(int arraySize) {
+    private void FixedUpdate()
+    {
+        meshHeightScale = Mathf.SmoothDamp(meshHeightScale, originalHeight, ref heightVelocity, 1f);
+        perlinNoiseScale = Mathf.SmoothDamp(perlinNoiseScale, originalNoise, ref noiseVeloicty, 3f);
+    }
+
+
+
+    private void RegenerateRandomPositionsArray(int arraySize) {
 		for(int i = 0; i < arraySize; i++) {
 			positions[i] = new Vector3(Random.Range(-x_randomLimit, x_randomLimit), Random.Range(-y_randomLimit, y_randomLimit), 0);
 		}
 	}
+
+    public void PulseHeight()
+    {
+        meshHeightScale = 1f;
+    }
+
+    public void PulseNoise()
+    {
+        perlinNoiseScale = 5f;
+    }
 }

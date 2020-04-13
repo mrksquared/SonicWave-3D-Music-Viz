@@ -48,11 +48,16 @@ public class analyzeMids : MonoBehaviour
         SpectrumGenerator.NewSpectrum -= analyzeSpectrum;
     }
 
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = -1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         indexToProcess = thresholdWindowSize / 2;
-        Application.targetFrameRate = 60;
         Time.fixedDeltaTime = (1f / (bpm / 60)) / 64;
 
         if (spectrumGenerator == null)

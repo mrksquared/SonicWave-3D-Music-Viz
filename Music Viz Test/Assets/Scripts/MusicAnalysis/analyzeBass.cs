@@ -79,7 +79,7 @@ public class analyzeBass : MonoBehaviour
 
     public void analyzeSpectrum()
     {
-
+        Debug.Log("We are in analyzeBass");
         float time = spectrumGenerator.getCurTimeStamp();
 
 
