@@ -14,7 +14,7 @@ public class BumpToBeat : MonoBehaviour
 
     public enum FrequencyType
     {
-        BASS, MIDS, TREBLE
+        BEAT1, BEAT2, BEAT4
     };
 
 
@@ -22,15 +22,15 @@ public class BumpToBeat : MonoBehaviour
     private void OnEnable()
     {
         switch (frequencyType) {
-            case FrequencyType.BASS:
-                analyzeBass.BassPeak += setBig;
+            case FrequencyType.BEAT1:
+                PrecannedExperience.Beat1 += setBig;
 
                 break;
-            case FrequencyType.MIDS:
-                analyzeMids.MidsPeak += setBig;
+            case FrequencyType.BEAT2:
+                PrecannedExperience.Beat2 += setBig;
                 break;
-            case FrequencyType.TREBLE:
-                analyzeHighs.HighPeak += setBig;
+            case FrequencyType.BEAT4:
+                PrecannedExperience.Beat4 += setBig;
                 break;
 
          }
@@ -40,16 +40,17 @@ public class BumpToBeat : MonoBehaviour
     {
         switch (frequencyType)
         {
-            case FrequencyType.BASS:
-                analyzeBass.BassPeak -= setBig;
+            case FrequencyType.BEAT1:
+                PrecannedExperience.Beat1 -= setBig;
 
                 break;
-            case FrequencyType.MIDS:
-                analyzeMids.MidsPeak -= setBig;
+            case FrequencyType.BEAT2:
+                PrecannedExperience.Beat2 -= setBig;
                 break;
-            case FrequencyType.TREBLE:
-                analyzeHighs.HighPeak -= setBig;
+            case FrequencyType.BEAT4:
+                PrecannedExperience.Beat4 -= setBig;
                 break;
+
 
         }
     }

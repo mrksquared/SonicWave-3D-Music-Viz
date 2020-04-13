@@ -49,15 +49,15 @@ public class ParticleSea : MonoBehaviour {
 
     private void OnEnable()
     {
-        analyzeBass.BassPeak += PulseHeight;
-        analyzeHighs.HighPeak += PulseNoise;
+        PrecannedExperience.Beat1 += PulseHeight;
+        PrecannedExperience.Beat3 += PulseNoise;
         
     }
 
     private void OnDisable()
     {
-        analyzeBass.BassPeak -= PulseHeight;
-        analyzeHighs.HighPeak -= PulseNoise;
+        PrecannedExperience.Beat1 -= PulseHeight;
+        PrecannedExperience.Beat3 -= PulseNoise;
     }
 
 
@@ -192,6 +192,6 @@ public class ParticleSea : MonoBehaviour {
 
     public void PulseNoise()
     {
-        perlinNoiseScale = 5f;
+        perlinNoiseScale = 6f;
     }
 }

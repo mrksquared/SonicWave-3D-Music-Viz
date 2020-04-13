@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -955,6 +955,7 @@ GameObject:
   - component: {fileID: 328807079}
   - component: {fileID: 328807084}
   - component: {fileID: 328807085}
+  - component: {fileID: 328807086}
   m_Layer: 0
   m_Name: MusicInput
   m_TagString: Untagged
@@ -969,7 +970,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328807078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7fbe8ecc17b984d9d786baef9fa012, type: 3}
   m_Name: 
@@ -986,7 +987,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328807078}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 1c3ced7b046f94c4997c74e9c267e411,
     type: 2}
@@ -1193,7 +1194,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328807078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98bd08fe51d23d74da2e377817217772, type: 3}
   m_Name: 
@@ -1209,7 +1210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328807078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f8a7b6b13d84e54ebb8acc4821e80bf, type: 3}
   m_Name: 
@@ -1224,7 +1225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328807078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b78a8cbed85ed4b937f89f56e5bff5, type: 3}
   m_Name: 
@@ -1232,6 +1233,21 @@ MonoBehaviour:
   thresholdWindowSize: 64
   thresholdMultiplier: 1
   spectrumGenerator: {fileID: 328807083}
+--- !u!114 &328807086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328807078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cf9ae145709114b8547032e206ff9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 328807082}
+  bpm: 95
+  waitToStartTime: 0.28
 --- !u!1 &350265022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2524,55 @@ MonoBehaviour:
   translationEnabled: 1
   mouseSensitivity: 1
   straffeSpeed: 5
+--- !u!1 &635761517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635761519}
+  - component: {fileID: 635761518}
+  m_Layer: 0
+  m_Name: RainOfCubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &635761518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635761517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65935ceea1e64494abd4c60bcfae1a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube1: {fileID: 1052646135836941395, guid: 5b9ce4e40ac1b92438a261bab104b829, type: 3}
+  cube2: {fileID: 1162659351126042467, guid: a2ec290fa259e1a459cd93e6ccbe22ae, type: 3}
+  cube3: {fileID: 521003667261894807, guid: c3c3b725ea86ccb4fb27087a8511250f, type: 3}
+  timeBetweenBursts: 2
+  numCubesInBurst: 2
+  squareWidth: 10
+--- !u!4 &635761519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635761517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &650479955
 GameObject:
   m_ObjectHideFlags: 0
