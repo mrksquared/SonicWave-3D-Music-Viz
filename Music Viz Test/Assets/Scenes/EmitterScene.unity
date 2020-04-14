@@ -993,7 +993,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 88f839f8f9ea3cd49ad4abc0ee170301, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.92
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2556,9 +2556,12 @@ MonoBehaviour:
   cube1: {fileID: 1052646135836941395, guid: 5b9ce4e40ac1b92438a261bab104b829, type: 3}
   cube2: {fileID: 1162659351126042467, guid: a2ec290fa259e1a459cd93e6ccbe22ae, type: 3}
   cube3: {fileID: 521003667261894807, guid: c3c3b725ea86ccb4fb27087a8511250f, type: 3}
+  averageCubeVelocity: {x: 1, y: -2, z: -1}
   timeBetweenBursts: 2
-  numCubesInBurst: 2
+  numCubesInBurst: 4
   squareWidth: 10
+  useColor: 1
+  cubeColor: {r: 0, g: 0.18557549, b: 1, a: 0}
 --- !u!4 &635761519
 Transform:
   m_ObjectHideFlags: 0
@@ -2567,7 +2570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635761517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4231,6 +4234,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7411765, g: 1, b: 1, a: 1}
   x_randomLimit: 10
   y_randomLimit: 10
+  react: 1
   xAnimSpeed: 0.2
   yAnimSpeed: 0.15
 --- !u!198 &1349836622

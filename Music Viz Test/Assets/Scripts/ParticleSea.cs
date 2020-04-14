@@ -31,6 +31,8 @@ public class ParticleSea : MonoBehaviour {
     float originalNoise;
     float noiseVeloicty = 0f;
 
+    public bool react = true;
+
 	private Vector3[] positions;
 	private bool colorsAssigned = false;
 	private ParticleSystem.Particle[] particlesArray;
@@ -49,15 +51,21 @@ public class ParticleSea : MonoBehaviour {
 
     private void OnEnable()
     {
-        PrecannedExperience.Beat1 += PulseHeight;
-        PrecannedExperience.Beat3 += PulseNoise;
+        if (react)
+        {
+            PrecannedExperience.Beat1 += PulseHeight;
+            PrecannedExperience.Beat3 += PulseNoise;
+        }
         
     }
 
     private void OnDisable()
     {
-        PrecannedExperience.Beat1 -= PulseHeight;
-        PrecannedExperience.Beat3 -= PulseNoise;
+        if (react)
+        {
+            PrecannedExperience.Beat1 -= PulseHeight;
+            PrecannedExperience.Beat3 -= PulseNoise;
+        }
     }
 
 

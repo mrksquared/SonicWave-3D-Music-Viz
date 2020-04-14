@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 521003667261894804}
   - component: {fileID: 9153508801087736535}
   m_Layer: 0
-  m_Name: TrebleCube
+  m_Name: Beat4Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec45904c9144ff40a8d6df37a9c3a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequencyType: 2
+  frequencyType: 3
 --- !u!65 &521003667261894804
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BumpToBeat : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class BumpToBeat : MonoBehaviour
 
     public enum FrequencyType
     {
-        BEAT1, BEAT2, BEAT4
+        BEAT1, BEAT2, BEAT3, BEAT4
     };
 
 
@@ -28,6 +29,9 @@ public class BumpToBeat : MonoBehaviour
                 break;
             case FrequencyType.BEAT2:
                 PrecannedExperience.Beat2 += setBig;
+                break;
+            case FrequencyType.BEAT3:
+                PrecannedExperience.Beat3 += setBig;
                 break;
             case FrequencyType.BEAT4:
                 PrecannedExperience.Beat4 += setBig;
@@ -46,6 +50,9 @@ public class BumpToBeat : MonoBehaviour
                 break;
             case FrequencyType.BEAT2:
                 PrecannedExperience.Beat2 -= setBig;
+                break;
+            case FrequencyType.BEAT3:
+                PrecannedExperience.Beat3 -= setBig;
                 break;
             case FrequencyType.BEAT4:
                 PrecannedExperience.Beat4 -= setBig;
@@ -86,9 +93,13 @@ public class BumpToBeat : MonoBehaviour
 
     public void setOpaque()
     {
-        for (int i = 0; i < rend.materials.Length; i++)
+        try
         {
-            rend.materials[i].SetVector("_Color", rend.materials[i].GetVector("_Color") + new Vector4(0,0,0,1f));
+            rend.material.SetColor("_Color", rend.material.color + new Color(0, 0, 0, 1f));
+        } catch(Exception e)
+        {
+            Debug.Log(e);
         }
+        
     }
 }
