@@ -34,7 +34,7 @@ public class Spinner : MonoBehaviour
     {
         while (true)
         {
-            Vector3 flowerCenter = new Vector3(Random.Range(-squareWidth, squareWidth), Random.Range(-squareWidth, squareWidth), Random.Range(-squareWidth, squareWidth));
+            Vector3 flowerCenter = transform.position + new Vector3(Random.Range(-squareWidth, squareWidth), Random.Range(-squareWidth, squareWidth), Random.Range(-squareWidth, squareWidth));
 
             for (int i = 0; i < numCubesInBurst; i++)
             {

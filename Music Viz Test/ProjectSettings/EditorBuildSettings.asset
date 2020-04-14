@@ -9,6 +9,24 @@ EditorBuildSettings:
     path: Assets/WebXR/Samples/Desert/WebXR.unity
     guid: 62764e63b9bc64baaaf251014195be42
   - enabled: 1
-    path: Assets/Scenes/EmitterScene.unity
+    path: Assets/Scenes/Room.unity
+    guid: 0b3488e03591547b0ab7c39741cb236a
+  - enabled: 1
+    path: Assets/Scenes/GetYourWish.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AnotherLover.unity
+    guid: 91c9b699e3af2494f9ba429d587aaa8c
+  - enabled: 1
+    path: Assets/Scenes/Mtjoy.unity
+    guid: 9e9a1cdcd57925e409240e026e1fa570
+  - enabled: 1
+    path: Assets/Scenes/Wallflower.unity
+    guid: 7b618cbe60452994bae37b9eb3c9d0f0
+  - enabled: 1
+    path: Assets/Scenes/minipops.unity
+    guid: cb505ddbe01100d4784097bbc3e17af6
+  - enabled: 1
+    path: Assets/Scenes/RoomCopy.unity
+    guid: 8b7672b525c974b4aa69b802ff55b944
   m_configObjects: {}
