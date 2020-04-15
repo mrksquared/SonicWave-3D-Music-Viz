@@ -1,4 +1,4 @@
-# View Project @ https://mrksquared.github.io/SonicWave-3D-Music-Viz/
+# View Project @ https://kev123361.github.io/SonicwaveTestBuild/
 
 Semester Project for Mixed Reality Design @ GaTech S2020
 
